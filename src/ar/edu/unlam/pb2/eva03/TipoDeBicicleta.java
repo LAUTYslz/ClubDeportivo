@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.eva03.enumeradores;
+package ar.edu.unlam.pb2.eva03;
 
 public enum TipoDeBicicleta {
 	RUTA,

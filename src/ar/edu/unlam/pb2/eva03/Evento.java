@@ -13,4 +13,23 @@ public class Evento {
 	private Integer numeroDeInscripcion;
 	private Map<Integer, Deportista> participantes;
 	
+	public Evento(TipoDeEvento tipoDeEvento) {
+		this.setTipo(tipoDeEvento);
+		this.participantes = new HashMap<>();
+		this.numeroDeInscripcion=1;
+	}
+
+	public TipoDeEvento getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoDeEvento tipo) {
+		this.tipo = tipo;
+	}
+
+	public void agregarDeportistaAEvento(Deportista deportista) {
+		this.participantes.put(numeroDeInscripcion, deportista);
+		this.numeroDeInscripcion++;
+	}
+	
 }
