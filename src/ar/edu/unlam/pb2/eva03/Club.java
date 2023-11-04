@@ -50,63 +50,90 @@ public class Club {
 		}
 		switch (evento.getTipo()) {
 		case CARRERA_5K: {
-			if (deportista instanceof Corredor) {
-				Corredor corredor = (Corredor) deportista;
+			if (deportista instanceof ICorredor) {
 //				Integer cantidadDeKmEntrenados=corredor.getCantidadDeKilometrosEntrenados();
 				evento.agregarDeportistaAEvento(deportista);
+				return true;
 			}
 			throw new NoEstaPreparado();
 		}
 		case CARRERA_10K: {
-			if(deportista instanceof Corredor) {
-				Corredor corredor = (Corredor) deportista;
+			if(deportista instanceof ICorredor) {
 				evento.agregarDeportistaAEvento(deportista);
+				return true;
 			}
 			throw new NoEstaPreparado();
 		}
 		case CARRERA_21K: {
-			if(deportista instanceof Corredor) {
-				Corredor corredor = (Corredor) deportista;
+			if(deportista instanceof ICorredor) {
 				evento.agregarDeportistaAEvento(deportista);
+				return true;
 			}
 			throw new NoEstaPreparado();
 		}
 		case CARRERA_42K: {
-			if(deportista instanceof Corredor) {
-				Corredor corredor = (Corredor) deportista;
+			if(deportista instanceof ICorredor) {
 				evento.agregarDeportistaAEvento(deportista);
+				return true;
 			}
 			throw new NoEstaPreparado();
 		}
 		case DUATLON: {
-			if(deportista instanceof Duatleta) {
-				Duatleta corredor = (Duatleta) deportista;	
+			if(deportista instanceof ICorredor) {
+				if(deportista instanceof INadador) {
+//				Duatleta corredor = (Duatleta) deportista;	
 				evento.agregarDeportistaAEvento(deportista);
-
+				return true;
+				}
 			}
 			throw new NoEstaPreparado();
 		}
 		case CARRERA_NATACION_EN_PICINA: {
 			if(deportista instanceof INadador) {
-				Duatleta corredor = (Duatleta) deportista;	
 				evento.agregarDeportistaAEvento(deportista);
+				return true;
 			}
 			throw new NoEstaPreparado();
 
 		}
 		case CARRERA_NATACION_EN_AGUAS_ABIERTAS: {
-
+			if(deportista instanceof INadador) {
+				evento.agregarDeportistaAEvento(deportista);
+				return true;
+			}
+			throw new NoEstaPreparado();
 		}
 		case TRIATLON_SHORT: {
-
+			if(deportista instanceof Triatleta) {
+				evento.agregarDeportistaAEvento(deportista);
+				return true;
+			}
+			throw new NoEstaPreparado();
 		}
 		case TRIATLON_OLIMPICO: {
-			
+			if(deportista instanceof Triatleta) {
+				evento.agregarDeportistaAEvento(deportista);
+				return true;
+			}
+			throw new NoEstaPreparado();
 		}
 		case TRIATLON_MEDIO: {
-			
+			if(deportista instanceof Triatleta) {
+				evento.agregarDeportistaAEvento(deportista);
+				return true;
+			}
+			throw new NoEstaPreparado();
 		}
 		case TRIATLON_IRONMAN: {
+			if(deportista instanceof Triatleta) {
+//				if(deportista instanceof ICiclista) {
+//					if(deportista instanceof ICorredor) {
+				evento.agregarDeportistaAEvento(deportista);
+				return true;
+//					}
+//				}
+			}
+			throw new NoEstaPreparado();
 		}
 	}
 		return null;

@@ -71,9 +71,9 @@ public class PruebaEva03 {
 		actual.agregarDeportista(celeste);
 		actual.crearEvento(TipoDeEvento.CARRERA_NATACION_EN_AGUAS_ABIERTAS, "Maraton de aguas abiertas");
 		
-		assertNotEquals((Integer)1, actual.inscribirEnEvento("Maraton de aguas abiertas", celeste));		
+		assertTrue( actual.inscribirEnEvento("Maraton de aguas abiertas", celeste));		
 	}
-	/*
+	
 	@Test (expected = NoEstaPreparado.class)
 	public void  queUnCorredorNoSePuedaInscribirEnUnTriatlon () throws NoEstaPreparado{		
 		// En los triatlones s�lo pueden inscribirse los que sean INadador & ICiclista
@@ -81,8 +81,9 @@ public class PruebaEva03 {
 		Club actual = new Club("Sitas");
 		
 		actual.crearEvento(TipoDeEvento.TRIATLON_IRONMAN, "Triatlon Khona");
-		
-		assertNotEquals((Integer)1, actual.inscribirEnEvento("Triatlon Khona", celeste));		
+		actual.agregarDeportista(celeste);
+
+		assertTrue( actual.inscribirEnEvento("Triatlon Khona", celeste));		
 	}
 	
 	@Test
@@ -92,8 +93,10 @@ public class PruebaEva03 {
 				
 		((Corredor)celeste).setCantidadDeKilometrosEntrenados(100000);
 		actual.crearEvento(TipoDeEvento.CARRERA_42K, "Maraton de New York");
+		actual.agregarDeportista(celeste);
+
 		
-		assertEquals((Integer)1, actual.inscribirEnEvento("Maraton de New York", celeste));			
+		assertTrue( actual.inscribirEnEvento("Maraton de New York", celeste));			
 	}
-	*/
+	
 }
